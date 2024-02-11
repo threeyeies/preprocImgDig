@@ -1,28 +1,23 @@
+# ARCHIVO DE PRUEBA PARA EL MANEJO DE IMÁGENES RGB (BGR EN OPENCV) EN PYTHON
 import numpy as np
-import matplotlib.pyplot as plt
+import cv2
 
+# Crear una matriz (por ejemplo, una imagen en blanco)
+width = 400
+height = 300
+channels = 3  # RGB
 
-m = [1,2,3],[1,5,6],[7,8,9]
+# Crear una matriz con valores aleatorios para este ejemplo
+matrix = np.random.randint(0, 256, (height, width, channels), dtype=np.uint8)
 
-def main():
+# Guardar la matriz como una imagen JPEG
+cv2.imwrite('matriz_imagen.jpg', matrix)
 
-    print(m)
-     # Histograma de la matriz m
-    hist, bins = np.histogram(m, bins=range(11))  # Crear histograma con 256 bins (de 0 a 255)
+print("Imagen guardada correctamente.")
 
-    '''NumPy internamente aplana la matriz en una sola dimensión, es decir, convierte la matriz en una lista 
-    unidimensional. Luego, cuenta cuántas veces aparece cada valor en esta lista unidimensional dentro de 
-    los bins especificados. El resultado es un vector con la frecuencia de aparición de cada valor.'''
+coord_x = 12
+coord_y = 23
 
-    # Visualización del histograma
-    plt.bar(bins[:-1], hist, width=1)  # Crear el gráfico de barras
-    plt.xticks(np.arange(0, 10, 1)) # Marcar graduación del eje x desde 0 hasta 10 cada unidad
-    print(hist)
-    plt.title('Histograma de Frecuencias')
-    plt.xlabel('Valor')
-    plt.ylabel('Frecuencia')
-    plt.show()
+pixel_value = matrix[coord_y, coord_x]
 
-   
-if __name__ == "__main__":
-    main()
+print("Valor del píxel en la posición (12, 23):", pixel_value)
