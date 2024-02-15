@@ -215,13 +215,11 @@ def main():
     # Guardar la matriz con etiquetas como una imagen JPEG y BMP y abrir ambas
     cv2.imwrite("E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizMc.jpg", mc)
     cv2.imwrite("E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizMc.bmp", mc)
-    cv2.imwrite("E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizEq.jpg", mEq)
 
     # Abrir la imagen con etiquetas
     os.system("start E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizMc.jpg")
     os.system("start E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizMc.bmp")
-    os.system("start E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizM1.jpg")
-    os.system("start E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizEq.jpg")
+
 
     # obtener los datos EXIF de las imagenes
     metadata = get_ExifData(imagepath)
