@@ -163,9 +163,6 @@ def main():
     plt.ylabel('Frecuencia')
     
 
-   
-
-
     # Ecualización del histograma
     new_Levels_Gray = ecualitation(hist, bins)
     
@@ -186,16 +183,12 @@ def main():
     
     # Histograma de la matriz mEq
     
-    hist, bins = np.histogram(mEq, bins=range(257))  # Crear histograma con 256 bins (de 0 a 255)
-
-    # frecuencia de aparición de cada valor
-    for i, j in zip(hist, bins):
-        print(f"Valor: {j} Frecuencia: {i}")
+    hist2, bins2 = np.histogram(mEq, bins=range(257))  # Crear histograma con 256 bins (de 0 a 255)
 
 
     # Visualización del histograma
     plt.figure(2)  # Ajustar el tamaño de la ventana
-    plt.bar(bins[:-1], hist, width=3)  # Crear el gráfico de barras
+    plt.bar(bins2[:-1], hist2, width=3)  # Crear el gráfico de barras
     plt.title('Histograma de Frecuencias de cada Valor 0-255')
     plt.xlabel('Valor')
     plt.ylabel('Frecuencia')
@@ -222,10 +215,13 @@ def main():
     # Guardar la matriz con etiquetas como una imagen JPEG y BMP y abrir ambas
     cv2.imwrite("E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizMc.jpg", mc)
     cv2.imwrite("E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizMc.bmp", mc)
+    cv2.imwrite("E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizEq.jpg", mEq)
 
     # Abrir la imagen con etiquetas
     os.system("start E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizMc.jpg")
     os.system("start E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizMc.bmp")
+    os.system("start E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizM1.jpg")
+    os.system("start E:\\Lenovo\\Documents\\DIAMCRUST\\CODING\\SPACEWORK\\PYTHON\\procesamientoDeImagenes\\matrizEq.jpg")
 
     # obtener los datos EXIF de las imagenes
     metadata = get_ExifData(imagepath)
